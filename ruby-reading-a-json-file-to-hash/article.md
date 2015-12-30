@@ -10,15 +10,15 @@ If you are new to **JSON **(JavaScript Object Notation) you might want to read [
 
 You need to require JSON before JSON parse, thus let us require at first.
 
-``` ruby
+```ruby
 require 'json'
  => true
 ```
 
-If above steps returns false then probably you don't have json gem installed on your machine. You can install JSON gem using following command,
+If above steps returns false then probably you don't have `json` gem installed on your machine. You can install JSON gem using following command:
 
-``` ruby
- gem install json
+```shell
+$ gem install json
 ```
 
 
@@ -26,16 +26,16 @@ If above steps returns false then probably you don't have json gem installed on 
 
 You can create file handle to parse JSON file in Ruby with given command,
 
-``` ruby
+```ruby
 file = File.read('file-name-to-be-read.json')
 ```
 
-The above command will open file ‘file-name-to-be-read.json’ in read mode.
+The above command will open file `file-name-to-be-read.json` in read mode.
 
 ### Step 2: Parse Data from File
 
 
-``` ruby
+```ruby
 data_hash = JSON.parse(file)
 ```
 
@@ -46,14 +46,14 @@ The above command will parse the data from the file using file handle created wi
 File name - json_data_ruby_in_rails.json
 Content:
 
-``` json
+```json
 {
- "title"	:	"Ruby In Rails",
- "url"	:	"http://rubyinrails.com",
- "posts"	:	{
-     "1":"strftime-time-format-in-ruby",
-             "2":"what-is-gemset"
-            }
+  "title": "Ruby In Rails",
+  "url": "http://rubyinrails.com",
+  "posts": {
+    "1": "strftime-time-format-in-ruby",
+    "2": "what-is-gemset"
+  }
 }
 ```
 
@@ -61,16 +61,16 @@ Content:
 ## After Executing read JSON file to hash code
 
 
-``` ruby
- require 'json'
+```ruby
+require 'json'
 file = File.read('file-name-to-be-read.json')
 data_hash = JSON.parse(file)
 
 ```
 
-Now, the variable data_hash will be consisting of hash from which we can **access** values as,
+Now, the variable `data_hash` will be consisting of hash from which we can **access** values as,
 
-``` ruby
+```ruby
 data_hash['title']
  => "Ruby In Rails"
 data_hash.keys
