@@ -1,4 +1,4 @@
-I have spent some time really digging into
+I have spent a lot of time digging into
 [generators](http://docs.python.org/2/tutorial/classes.html#generators) and by
 extension
 [iterables](http://docs.python.org/2/library/stdtypes.html#iterator-types).
