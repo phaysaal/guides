@@ -1,4 +1,4 @@
-This is my 'high-level' approach to profiling and speeding up code in
+This is a 'high-level' approach to profiling and speeding up code in
 [Python](http://python.org). This is by no means an exhaustive approach and
 will most likely only point out quick and easy places to speed up your code.
 
