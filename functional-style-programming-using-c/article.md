@@ -81,11 +81,14 @@ Composition
 A function can be composed using other functions. It often simplifies
 the expression. For example, the function, `squareOfDistance` can be
 simplified if we use the function `square`. It is shown here –
-``` square(x) = x \times x``` 
-``` squareOfDistance_1(x_1,y_1,x_2,y_2)=square(x_1-x_2)+square(y_1-y_2)``` 
-```c
-Let us write it in programming language.
 
+``` 
+square(x) = x \times x
+squareOfDistance_1(x_1,y_1,x_2,y_2)=square(x_1-x_2)+square(y_1-y_2)
+``` 
+
+Let us write it in programming language.
+```c
     int square(int x){
             return x * x;
     }
@@ -94,7 +97,6 @@ Let us write it in programming language.
      return square(x1-x2) + square(y1-y2);
     }
 ```
-
 
 Here we can see that the function <span>*squareOfDistance1*</span> is
 using two copies of the function <span>*square*</span>. It is very
@@ -108,11 +110,16 @@ chapter in new form using composition.
 
 ### The Function `Poly2`
 
-The old function was defined as – ``` Poly2(x) = x^4 + x^2 + 1``` 
+The old function was defined as – 
+``` 
+Poly2(x) = x^4 + x^2 + 1
+``` 
 
 Now we will re-define it as `Poly2_1` using the function `square`.
-``` square(x) = x \times x``` 
-``` Poly2_1(x) = square(square(x)) + square(x) + 1``` 
+``` 
+square(x) = x \times x 
+Poly2_1(x) = square(square(x)) + square(x) + 1
+``` 
 
 In programming, we can write it as –
 ```c
@@ -126,14 +133,22 @@ In programming, we can write it as –
 ```
 ### The Function sumOfQube
 
-The old function was defined as – ``` sumOfQube_1(x) = (x(x+1)/2)^2``` 
+The old function was defined as – 
+``` 
+sumOfQube_1(x) = (x(x+1)/2)^2
+``` 
 
 Now we will re-define it as `sumOfQube` using the function `square` and
-`sum`. ``` square(x) = x \times x``` ``` sum(x) = (square(x) + x) / 2``` 
-``` sumOfQube(x) = square(sum(x))``` 
+`sum`. 
+``` 
+square(x) = x \times x
+sum(x) = (square(x) + x) / 2 
+sumOfQube(x) = square(sum(x))
+``` 
 
 In programming, we can write it as –
 
+```c
     int square(int x){
             return x * x;
     }
@@ -145,16 +160,19 @@ In programming, we can write it as –
     int sumOfSquare(int x){
             return square(sum(x));
     }
+```
 
-Prove that – `x^3 = x \times square(x)`
-`x^8 = square(square(square(x)))` Simplify them by composing other
-functions and write programs accordingly – `qube_c(x) = x^3`
-`toPower8(x) = x^8` `toPower4(x) = x^4`
+#### Exercise
 
-Write programs for – `parabola(a,b,c,x) = ax^2 + bx + c`
-`square_p(x) = parabola(1,0,0,x)` `qube_p(x) = parabola(x,0,0,x)`
-
-Write program for `toPower4_p(x) = parabola(parabola(1,0,0,x),0,0,x)`
-and prove that `toPower4_p(x) = x^4`.
+1. Prove that – 
+  a. `x^3 = x \times square(x)`
+  b. `x^8 = square(square(square(x)))` 
+2. Simplify them by composing other functions and write programs accordingly – 
+  a. `qube_c(x) = x^3`
+  b. `toPower8(x) = x^8` `toPower4(x) = x^4`
+3. Write programs for – 
+  a. `parabola(a,b,c,x) = ax^2 + bx + c`
+  b. `square_p(x) = parabola(1,0,0,x)` `qube_p(x) = parabola(x,0,0,x)`
+4. Write program for `toPower4_p(x) = parabola(parabola(1,0,0,x),0,0,x)` and prove that `toPower4_p(x) = x^4`.
 
 
